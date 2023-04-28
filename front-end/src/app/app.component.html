@@ -1,3 +1,14 @@
 <app-header></app-header>
-<app-home></app-home>
+<main class="main_container">
+    <div *ngIf="isMobile">
+        <swiper direction="horizontal" (slideChange)="onSlideChange($event)">
+            <ng-template *ngFor="let section of mobileSections" swiperSlide>
+                <ng-container *ngComponentOutlet="section"></ng-container>
+            </ng-template>
+        </swiper>
+    </div>
+    <app-home class="home-section"></app-home>
+    <app-portfolio class="portfolio-section"></app-portfolio>
+</main>
+
 <router-outlet></router-outlet>
