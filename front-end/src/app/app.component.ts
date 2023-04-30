@@ -1,7 +1,6 @@
 import { Component, NgZone } from '@angular/core';
-import { SwiperComponent } from "swiper/angular";
-import { HomeComponent } from './components/sections/home/home.component';
-import { PortfolioComponent } from './components/sections/portfolio/portfolio.component';
+import { HomeComponent } from './components/home/home.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 // import Swiper core and required components
@@ -16,9 +15,6 @@ import SwiperCore, {
   Thumbs,
   Controller,
 } from 'swiper';
-import { BehaviorSubject } from "rxjs";
-import Swiper from "swiper/types/swiper-class";
-
 
 // install Swiper components
 SwiperCore.use([
@@ -42,7 +38,6 @@ export class AppComponent {
   title = 'front-end';
   isMobile: boolean = false;
   mobileSections = [HomeComponent, PortfolioComponent];
-  slidesEx = ['first', 'second'];
   constructor(
     private ngZone: NgZone,
     private breakpointObserver: BreakpointObserver
@@ -65,8 +60,6 @@ export class AppComponent {
       this.ngZone.run(() => {
         this.mobileSections = [...this.mobileSections];
       });
-      console.log(this.slidesEx);
     }
   }
-
 }

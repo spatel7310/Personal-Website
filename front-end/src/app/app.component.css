@@ -1,5 +1,6 @@
 /* Add application styles & imports to this file! */
-@import "~swiper/swiper-bundle";
+@import 'swiper/swiper-bundle.min.css';
+@import 'swiper/swiper.min.css';
 
 body,
 html {

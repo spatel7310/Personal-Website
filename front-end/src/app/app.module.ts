@@ -4,19 +4,16 @@ import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/sections/home/home.component';
-import { HeaderComponent } from './components/sections/header/header.component';
-import { PortfolioComponent } from './components/sections/portfolio/portfolio.component';
-import { ContactComponent } from './components/sections/contact/contact.component';
-
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
+    HomeComponent,
     PortfolioComponent,
-    ContactComponent,
   ],
   imports: [
     BrowserModule,
