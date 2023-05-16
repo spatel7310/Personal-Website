@@ -1,5 +1,7 @@
 <app-header></app-header>
 <main class="main_container">
+    <ng-particles [id]="id" [options]="particleOptions" [particlesInit]="particlesInit"
+        (particlesLoaded)="particlesLoaded($event)"></ng-particles>
     <div *ngIf="isMobile">
         <swiper direction="horizontal" (slideChange)="onSlideChange($event)">
             <ng-template *ngFor="let section of mobileSections" swiperSlide>
@@ -7,6 +9,11 @@
             </ng-template>
         </swiper>
     </div>
+    <div *ngIf="!isMobile">
+        <app-home></app-home>
+        <app-portfolio></app-portfolio>
+    </div>
 </main>
+
 
 <router-outlet></router-outlet>

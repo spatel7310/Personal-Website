@@ -3,6 +3,33 @@
 @import 'swiper/swiper-bundle.min.css';
 @import 'swiper/swiper.min.css';
 
+@font-face {
+  font-family: F25;
+  src: url(assets/fonts/F25_Bank_Printer.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: F25BOLD;
+  src: url(assets/fonts/F25_Bank_Printer_Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: ElectroBox;
+  src: url(assets/fonts/eElectroBox.ttf) format("truetype");
+}
+
+.ElectroBox {
+  font-family: ElectrBox;
+}
+
+.F25 {
+  font-family: F25;
+}
+
+.F25BOLD {
+  font-family: F25BOLD;
+}
+
 body,
 html {
   padding: 0;
@@ -18,7 +45,6 @@ html {
 }
 
 .swiper-slide {
-  background: #f1f1f1;
   color: #000;
   text-align: center;
   line-height: 300px;
