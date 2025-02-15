@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class PortfolioComponent implements OnInit {
   images: string[] = [
     '../../../assets/img/code_builder.png',
-    '../../../assets/img/phone_emulator.png',
     '../../../assets/img/soldby.jpeg',
-    '../../../assets/img/phone_emulator.png',
+    '../../../assets/img/notely.png',
+    '../../../assets/img/soldby.jpeg'
   ];
   currentImageIndex: number = 0;
   intervalId: any;
