@@ -15,19 +15,15 @@
         ]"></app-service-card>
       </div>
       <div class="rightside w-half lg:w-6/12 ml-auto mr-auto ">
-
         <div class="slidercontainer">
-          <div class="slide" *ngFor="let image of images; let i = index" 
-               [class.active]="i === currentImageIndex" 
-               [style.backgroundImage]="'url(' + image + ')'">
+          <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
+            [style.backgroundImage]="'url(' + image + ')'" (click)="onSlideClick()">
           </div>
         </div>
-
-        <div class="text-white F25BOLD center-when-mobile">
+        <div class="blur-color F25BOLD center-when-mobile">
           <img class="emulator-img ml-auto block" src="../../../assets/img/phone_emulator.png"
-            style="background-color: rgb(255, 255, 255); box-shadow: 0 0 20px 25px ;">
+            style="background-color: rgb(43, 43, 43) !important; box-shadow: 0 0 20px 25px ;">
         </div>
-
       </div>
     </div>
   </div>
