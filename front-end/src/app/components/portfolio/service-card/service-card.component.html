@@ -1,0 +1,23 @@
+<div class="service-card rounded-lg">
+    <div class="top-bar flex items-center rounded-t-lg rounded-none">
+        <div class="pl-4 flex items-center space-x-4">
+            <div class="window-button bg-red-500 rounded-full"></div>
+            <div class="window-button bg-yellow-500 rounded-full"></div>
+            <div class="window-button green rounded-full"></div>
+        </div>
+    </div>
+    <div class="rest-of-content flex-1 flex items-center p-4">
+        <!-- Code editor content -->
+        <div class="code-editor-content grid grid-cols-1 gap-y-1 text-gray-500">
+            <!-- Use ngFor to dynamically populate rows -->
+            <div class="foreach-row flex items-center" *ngFor="let paragraph of paragraphs; let i = index">
+                <span class="mr-2">{{ i + 1 }}.</span>
+                <span class="w-full">
+                    <ng-container *ngFor="let word of paragraph.split(' '); let j = index">
+                      <span [ngClass]="getWordColorClass(j)">{{ word }} </span>
+                    </ng-container>
+                </span>              
+            </div>
+        </div>
+    </div>
+</div>

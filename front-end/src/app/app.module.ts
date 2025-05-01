@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { NgParticlesModule } from "ng-particles";
+import { ServiceCardComponent } from './components/portfolio/service-card/service-card.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgParticlesModule } from "ng-particles";
     HeaderComponent,
     HomeComponent,
     PortfolioComponent,
+    ServiceCardComponent,
   ],
   imports: [
     BrowserModule,

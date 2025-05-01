@@ -4,6 +4,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { ViewChild } from '@angular/core';
+import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required components
 import SwiperCore, {
@@ -37,6 +39,8 @@ SwiperCore.use([
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild(SwiperComponent) swiper?: SwiperComponent;
 
   id = "tsparticles";
   title = 'front-end';
@@ -135,6 +139,43 @@ export class AppComponent {
       this.ngZone.run(() => {
         this.mobileSections = [...this.mobileSections];
       });
+    }
+  }
+
+  ngAfterViewInit() {
+    if (this.isMobile && this.swiper?.swiperRef) {
+      const swiperInstance = this.swiper.swiperRef;
+      const swiperEl = swiperInstance.wrapperEl;
+
+      const doBounce = () => {
+        swiperEl.style.transition = 'transform 350ms ease';
+
+        // First bounce out
+        swiperInstance.setTranslate(-100);
+
+        setTimeout(() => {
+          // Snap back immediately after first bounce
+          swiperInstance.setTranslate(0);
+
+          // Immediately start second bounce after snapping back
+          setTimeout(() => {
+            swiperInstance.setTranslate(-100);
+
+            setTimeout(() => {
+              swiperInstance.setTranslate(0);
+
+              // Clear the transition after the last snap
+              setTimeout(() => {
+                swiperEl.style.transition = '';
+              }, 300);
+            }, 300); // second bounce duration
+          }, 275); // delay between first snap back and second bounce
+        }, 300); // first bounce duration
+      };
+
+      setTimeout(() => {
+        doBounce();
+      }, 1000); // Allow swiper to settle before starting
     }
   }
 

@@ -49,3 +49,39 @@ html {
   text-align: center;
   line-height: 300px;
 }
+
+@media (max-width: 1024px) {
+  .center-when-mobile {
+    padding-right: unset !important;
+    text-align: center;
+  }
+
+  .parent-container {
+    margin-top: 80px;
+    display: flex !important;
+    flex-flow: column !important;
+  }
+
+  .rightside {
+    order: 1 !important;
+  }
+
+  .leftside {
+    margin-top: 70px;
+    order: 2 !important;
+  }
+
+  .slidercontainer {
+    left: 50% !important;
+    position: absolute;
+    top: 422px !important;
+    right: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 290px;
+    height: 648px;
+    background-color: rgba(167, 15, 15, 0.5);
+    z-index: 2;
+    border-radius: 30px;
+    margin-left: unset !important;
+  }
+}

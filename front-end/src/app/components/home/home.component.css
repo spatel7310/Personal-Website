@@ -93,25 +93,3 @@
   --timePerLine: 2s;
 }
 
-@media (max-width: 1024px) {
-  .center-when-mobile {
-    padding-right: unset !important;
-    text-align: center;
-  }
-
-  .parent-container {
-    margin-top: 80px;
-    display: flex !important;
-    flex-flow: column !important;
-  }
-
-  .rightside {
-    order: 1 !important;
-  }
-
-  .leftside {
-    margin-top: 40px;
-    order: 2 !important;
-  }
-
-}

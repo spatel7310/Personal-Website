@@ -1,11 +1,28 @@
-<section class="relative pt-16 flex content-center items-center justify-center min-h-screen-75">
+<section class="relative flex content-center min-h-screen-75">
   <div class="container relative mx-auto">
-    <div class="flex flex-wrap text-white">
-      <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-        <div class="flex flex-col items-center rounded-lg p-4">
-          <div class="w-64 h-64"></div> <!-- First square div -->
-          <div class="my-4"></div> <!-- Space between the squares -->
-          <div class="w-64 h-64"></div> <!-- Second square div -->
+    <div class="parent-container items-center flex flex-wrap text-white">
+      <div class="leftside w-half lg:w-6/12 px-4 ml-auto mr-auto text-left lg:text-left">
+        <app-service-card [paragraphs]="[
+          'public Class Services',
+          ' &emsp;&emsp;public Services_I_Offer()',
+          ' &emsp;&emsp; &emsp;&emsp; Web Development',
+          ' &emsp;&emsp; &emsp;&emsp; Mobile App Development',
+          ' &emsp;&emsp; &emsp;&emsp; Software Development',
+          ' &emsp;&emsp; &emsp;&emsp; E-commerce Development',
+          ' &emsp;&emsp; &emsp;&emsp; Consultation and Support',
+          ' &emsp;&emsp; &emsp;&emsp; Online Coding Classes',
+          ' &emsp;&emsp; &emsp;&emsp; Automation Services'
+        ]"></app-service-card>
+      </div>
+      <div class="rightside w-half lg:w-6/12 ml-auto mr-auto ">
+        <div class="slidercontainer">
+          <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
+            [style.backgroundImage]="'url(' + image + ')'" (click)="onSlideClick()">
+          </div>
+        </div>
+        <div class="blur-color F25BOLD center-when-mobile">
+          <img class="emulator-img ml-auto block" src="../../../assets/img/phone_emulator.png"
+            style="background-color: rgb(43, 43, 43) !important; box-shadow: 0 0 20px 25px ;">
         </div>
       </div>
     </div>
