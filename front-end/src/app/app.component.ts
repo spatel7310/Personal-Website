@@ -69,11 +69,11 @@ export class AppComponent {
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 2, // Number of particles to add on click
         },
         repulse: {
           distance: 100,
-          duration: 0.5,
+          duration: 0.4,
         },
       },
     },
@@ -83,9 +83,9 @@ export class AppComponent {
       },
       links: {
         color: "#ffffff",
-        distance: 200,
+        distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.4,
         width: 1,
       },
       collisions: {
@@ -98,10 +98,11 @@ export class AppComponent {
           default: OutMode.bounce,
         },
         random: false,
-        speed: 2,
+        speed: 1.2,
         straight: false,
       },
       number: {
+        limit: 75, // Absolute cap on particles
         density: {
           enable: true,
           area: 1000,

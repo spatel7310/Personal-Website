@@ -64,7 +64,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   align-self: center;
-  width: 60%;
+  width: 70%;
   /* Ensure it spans the full width */
 
   .app-experience-card {
@@ -84,7 +84,7 @@
 #slider_vertical {
   margin-top: 15vh;
   margin-bottom: 15vh;
-  height: 35vw;
+  height: 45vw;
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
@@ -101,7 +101,7 @@ input[type="radio"] {
 /* Default background color for all cards */
 #slider_vertical label {
   margin: auto;
-  width: 60%;
+  width: 90%;
   height: 100%;
   border-radius: 4px;
   position: absolute;
@@ -114,6 +114,7 @@ input[type="radio"] {
   transition: background-color 0.4s ease, transform 0.4s ease;
 }
 
+/*backmost top card*/
 #sv1:checked~#slide_vertical_4,
 #sv2:checked~#slide_vertical_5,
 #sv3:checked~#slide_vertical_1,
@@ -124,6 +125,7 @@ input[type="radio"] {
   transform: translate3d(0, -40%, -200px);
 }
 
+/*middle layer top card*/
 #sv1:checked~#slide_vertical_5,
 #sv2:checked~#slide_vertical_1,
 #sv3:checked~#slide_vertical_2,
@@ -134,7 +136,7 @@ input[type="radio"] {
   transform: translate3d(0, -20%, -100px);
 }
 
-/* Lighter background color for the checked card */
+/*checked card */
 #sv1:checked~#slide_vertical_1,
 #sv2:checked~#slide_vertical_2,
 #sv3:checked~#slide_vertical_3,
@@ -145,7 +147,7 @@ input[type="radio"] {
   transform: translate3d(0, 0, 0);
 }
 
-/* Darker background color for the second layer */
+/*middle layer bottom card*/
 #sv1:checked~#slide_vertical_2,
 #sv2:checked~#slide_vertical_3,
 #sv3:checked~#slide_vertical_4,
@@ -156,7 +158,7 @@ input[type="radio"] {
   transform: translate3d(0, 20%, -100px);
 }
 
-/* Even darker background color for the third layer */
+/* backmost bottom card */
 #sv1:checked~#slide_vertical_3,
 #sv2:checked~#slide_vertical_4,
 #sv3:checked~#slide_vertical_5,
@@ -184,23 +186,3 @@ input[type="radio"] {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
   transform: translate3d(0, 40%, -200px);
 }
-/* 
-#slide_vertical_1 {
-  background: #00BCD4;
-}
-
-#slide_vertical_2 {
-  background: #4CAF50;
-}
-
-#slide_vertical_3 {
-  background: #CDDC39;
-}
-
-#slide_vertical_4 {
-  background: #FFC107;
-}
-
-#slide_vertical_5 {
-  background: #FF5722;
-} */

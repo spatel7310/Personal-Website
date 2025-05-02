@@ -13,4 +13,5 @@ export class ExperienceCardComponent {
   @Input() icon!: string; // Path to the company icon
   @Input() experienceLink!: string; // Link to the experience details
   @Input() backgroundColor: string = '#fff'; // Background color for the card
+  @Input() isChecked: boolean = false; // Indicates if the card is in the checked position
 }

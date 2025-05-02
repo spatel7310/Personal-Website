@@ -41,3 +41,11 @@
         margin-top: 40px;
     }
 }
+
+@media (max-width: 1024px) {
+    .leftside {
+        margin-left: unset; /* Unset ml-auto */
+        margin-right: unset; /* Unset mr-auto */
+        width: 90%; /* Set width to 90% */
+    }
+}
