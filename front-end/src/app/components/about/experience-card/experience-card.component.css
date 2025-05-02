@@ -1,0 +1,43 @@
+.experience-card {
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer; /* Indicate hyperlink on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+  text-align: left;
+  min-height: 100%;
+  min-width: 100%; /* Ensure all cards are the same size */
+  max-width: 300px; /* Optional: Limit the maximum width */
+  font-size: 0.8rem; /* Adjust font size for better readability */
+  font-family: "Courier New", Courier, monospace; /* Monospace font */
+}
+
+.topright {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  top: 10px;
+  right: 10px;
+
+}
+.experience-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon-placeholder {
+  width: 80px; /* Fixed width */
+  height: 80px; /* Fixed height */
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure the image doesn't overflow */
+  border-radius: 50%; /* Optional: Make the icon circular */
+  background: #fff; /* Optional: Add a background color for contrast */
+}
+
+.icon-placeholder img {
+  width: 100%; /* Ensure the image fits the container */
+  height: 100%; /* Ensure the image fits the container */
+  object-fit: cover; /* Maintain aspect ratio and fill the container */
+}

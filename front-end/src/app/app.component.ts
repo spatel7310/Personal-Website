@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AboutComponent } from './components/about/about.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
@@ -45,7 +46,7 @@ export class AppComponent {
   id = "tsparticles";
   title = 'front-end';
   isMobile: boolean = false;
-  mobileSections = [HomeComponent, PortfolioComponent];
+  mobileSections = [HomeComponent, PortfolioComponent, AboutComponent];
 
   particleOptions = {
     background: {
@@ -68,11 +69,11 @@ export class AppComponent {
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 2, // Number of particles to add on click
         },
         repulse: {
           distance: 100,
-          duration: 0.5,
+          duration: 0.4,
         },
       },
     },
@@ -82,9 +83,9 @@ export class AppComponent {
       },
       links: {
         color: "#ffffff",
-        distance: 200,
+        distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.4,
         width: 1,
       },
       collisions: {
@@ -97,10 +98,11 @@ export class AppComponent {
           default: OutMode.bounce,
         },
         random: false,
-        speed: 2,
+        speed: 1.2,
         straight: false,
       },
       number: {
+        limit: 75, // Absolute cap on particles
         density: {
           enable: true,
           area: 1000,

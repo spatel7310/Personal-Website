@@ -1,0 +1,40 @@
+<div class="experience-card relative p-4" [style.background]="backgroundColor">
+  <a *ngIf="isChecked" [href]="experienceLink" target="_blank" rel="noopener noreferrer">
+    <div 
+      class="absolute topright w-12 h-12 rounded overflow-hidden"
+      *ngIf="icon"
+    >
+      <img 
+        [src]="icon" 
+        [alt]="company + ' Logo'" 
+        class="w-full h-full object-cover rounded"
+      />
+    </div>
+    <h1><strong>{{ position }}</strong></h1>
+    <h4>{{ company }}</h4>
+    <p>{{ yearsOfExperience }}</p>
+    <br>
+    <p class="description">{{ description }}</p>
+  </a>
+  <div *ngIf="!isChecked">
+      <div 
+      class="absolute topright w-12 h-12 rounded overflow-hidden"
+      *ngIf="icon"
+    >
+      <img 
+        [src]="icon" 
+        [alt]="company + ' Logo'" 
+        class="w-full h-full object-cover rounded"
+      />
+    </div>
+    <h1><strong>{{ position }}</strong></h1>
+    <h4>{{ company }}</h4>
+    <p>{{ yearsOfExperience }}</p>
+    <br>
+    <p class="description">{{ description }}</p>
+  </div>
+</div>
+
+    <!-- <div class="icon-placeholder" *ngIf="icon">
+      <img [src]="icon" alt="{{ company }} Logo" />
+    </div> -->

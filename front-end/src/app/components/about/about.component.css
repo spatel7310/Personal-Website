@@ -1,0 +1,188 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  align-items: center;
+  /* Center children horizontally */
+  justify-content: flex-start;
+  /* Ensure children are aligned from the top */
+  height: 100%;
+  /* Full height of the parent */
+  gap: 20px;
+  /* Add spacing between the text-container and card-grid/slider_vertical */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  /* Stack children vertically */
+  position: relative;
+  /* Remove absolute positioning */
+  width: 100%;
+  /* Ensure it spans the full width */
+  text-align: center;
+  gap: 0;
+  /* Add spacing between intro and additional text */
+}
+
+.intro-text {
+  background-color: black;
+  box-shadow: 0 0 20px 25px black;
+  width: 50%;
+  /* Default width for larger screens */
+}
+
+.additional-text {
+  background-color: black;
+  box-shadow: 0 0 20px 25px black;
+  width: 60%;
+  /* Default width for larger screens */
+}
+
+@media (max-width: 1024px) {
+  .text-container {
+    left: 0;
+    text-align: center;
+  }
+
+  .intro-text,
+  .additional-text {
+    width: auto;
+    text-align: center;
+    ;
+  }
+}
+
+/* 2D Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  align-self: center;
+  width: 70%;
+  /* Ensure it spans the full width */
+
+  .app-experience-card {
+    background-color: #666;
+  }
+}
+
+.card {
+  background: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* 3D Vertical Carousel */
+#slider_vertical {
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  height: 45vw;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 100%;
+  /* Ensure it spans the full width */
+  max-width: 1200px;
+  /* Optional: Limit the width */
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Default background color for all cards */
+#slider_vertical label {
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  /* Darker shade */
+  color: #fff;
+  /* Ensure text is visible on dark background */
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+
+/*backmost top card*/
+#sv1:checked~#slide_vertical_4,
+#sv2:checked~#slide_vertical_5,
+#sv3:checked~#slide_vertical_1,
+#sv4:checked~#slide_vertical_2,
+#sv5:checked~#slide_vertical_3 {
+  background-color: #222;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(0, -40%, -200px);
+}
+
+/*middle layer top card*/
+#sv1:checked~#slide_vertical_5,
+#sv2:checked~#slide_vertical_1,
+#sv3:checked~#slide_vertical_2,
+#sv4:checked~#slide_vertical_3,
+#sv5:checked~#slide_vertical_4 {
+  background-color: #444;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, -20%, -100px);
+}
+
+/*checked card */
+#sv1:checked~#slide_vertical_1,
+#sv2:checked~#slide_vertical_2,
+#sv3:checked~#slide_vertical_3,
+#sv4:checked~#slide_vertical_4,
+#sv5:checked~#slide_vertical_5 {
+  background-color: #666;
+  box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+  transform: translate3d(0, 0, 0);
+}
+
+/*middle layer bottom card*/
+#sv1:checked~#slide_vertical_2,
+#sv2:checked~#slide_vertical_3,
+#sv3:checked~#slide_vertical_4,
+#sv4:checked~#slide_vertical_5,
+#sv5:checked~#slide_vertical_1 {
+  background-color: #444;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, 20%, -100px);
+}
+
+/* backmost bottom card */
+#sv1:checked~#slide_vertical_3,
+#sv2:checked~#slide_vertical_4,
+#sv3:checked~#slide_vertical_5,
+#sv4:checked~#slide_vertical_1,
+#sv5:checked~#slide_vertical_2 {
+  background-color: #222;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(0, 40%, -200px);
+}
+
+#sv1:checked~#slide_vertical_2,
+#sv2:checked~#slide_vertical_3,
+#sv3:checked~#slide_vertical_4,
+#sv4:checked~#slide_vertical_5,
+#sv5:checked~#slide_vertical_1 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, 20%, -100px);
+}
+
+#sv1:checked~#slide_vertical_3,
+#sv2:checked~#slide_vertical_4,
+#sv3:checked~#slide_vertical_5,
+#sv4:checked~#slide_vertical_1,
+#sv5:checked~#slide_vertical_2 {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(0, 40%, -200px);
+}

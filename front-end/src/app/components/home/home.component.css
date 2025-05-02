@@ -93,3 +93,8 @@
   --timePerLine: 2s;
 }
 
+@media (max-width: 454px) {
+  h1{
+    font-size: 4rem !important;
+  }
+}

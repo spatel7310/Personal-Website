@@ -19,5 +19,16 @@ html {
 .swiper-slide {
   color: #000;
   text-align: center;
-  line-height: 300px;
+}
+
+canvas.tsparticles-canvas-el {
+  opacity: 0;
+  animation: fadeInCanvas 4s ease-in forwards;
+  animation-delay: 1s; /* Wait 1s before starting fade-in */
+}
+
+@keyframes fadeInCanvas {
+  to {
+    opacity: 0.5; /* Final opacity */
+  }
 }

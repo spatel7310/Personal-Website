@@ -47,7 +47,6 @@ html {
 .swiper-slide {
   color: #000;
   text-align: center;
-  line-height: 300px;
 }
 
 @media (max-width: 1024px) {
