@@ -1,0 +1,98 @@
+<section class="relative pt-24 flex content-center justify-center min-h-screen-75">
+  <div class="relative w-full h-full flex flex-col justify-center text-white">
+    <div class="flex flex-col items-center rounded-lg p-4 w-2/5 text-container">
+      <div class="big-caret intro-text" style="background-color: black; box-shadow: 0 0 20px 25px black;">
+        Hey, I’m a full-stack engineer with 3 years at GM, a background in computer science, and a passion for building
+        clean, efficient, and business-minded software. I’ve worked with companies like TechSmith and built apps from
+        the ground up, and I know what it takes to ship solid, user-focused solutions.
+      </div>
+      <br>
+      <div class="additional-text" style="background-color: black; box-shadow: 0 0 20px 25px black;">
+        When I’m not writing code, I’m probably climbing, reading, or building something.
+      </div>
+    </div>
+
+    <!-- Card Grid for Larger Screens -->
+    <div class="card-grid pt-24" *ngIf="!isSmallScreen">
+      <app-experience-card
+        *ngFor="let card of cards"
+        [position]="card.position"
+        [company]="card.company"
+        [description]="card.description"
+        [yearsOfExperience]="card.yearsOfExperience"
+        [icon]="card.icon"
+        [experienceLink]="card.experienceLink"
+        [backgroundColor]="'#666'">
+      </app-experience-card>
+    </div>
+    
+    <!-- 3D Vertical Carousel for Smaller Screens -->
+    <div id="slider_vertical" *ngIf="isSmallScreen">
+      <input type="radio" name="slider_vertical" id="sv1" checked>
+      <input type="radio" name="slider_vertical" id="sv2">
+      <input type="radio" name="slider_vertical" id="sv3">
+      <input type="radio" name="slider_vertical" id="sv4">
+      <input type="radio" name="slider_vertical" id="sv5">
+    
+      <label for="sv1" id="slide_vertical_1">
+        <app-experience-card
+          [position]="cards[0].position"
+          [company]="cards[0].company"
+          [description]="cards[0].description"
+          [yearsOfExperience]="cards[0].yearsOfExperience"
+          [icon]="cards[0].icon"
+          [experienceLink]="cards[0].experienceLink"
+          [backgroundColor]="'null'">
+        </app-experience-card>
+      </label>
+    
+      <label for="sv2" id="slide_vertical_2">
+        <app-experience-card
+          [position]="cards[1].position"
+          [company]="cards[1].company"
+          [description]="cards[1].description"
+          [yearsOfExperience]="cards[1].yearsOfExperience"
+          [icon]="cards[1].icon"
+          [experienceLink]="cards[1].experienceLink"
+          [backgroundColor]="'null'">
+        </app-experience-card>
+      </label>
+    
+      <label for="sv3" id="slide_vertical_3">
+        <app-experience-card
+          [position]="cards[2].position"
+          [company]="cards[2].company"
+          [description]="cards[2].description"
+          [yearsOfExperience]="cards[2].yearsOfExperience"
+          [icon]="cards[2].icon"
+          [experienceLink]="cards[2].experienceLink"
+          [backgroundColor]="'null'">
+        </app-experience-card>
+      </label>
+    
+      <label for="sv4" id="slide_vertical_4">
+        <app-experience-card
+          [position]="cards[3].position"
+          [company]="cards[3].company"
+          [description]="cards[3].description"
+          [yearsOfExperience]="cards[3].yearsOfExperience"
+          [icon]="cards[3].icon"
+          [experienceLink]="cards[3].experienceLink"
+          [backgroundColor]="'null'">
+        </app-experience-card>
+      </label>
+    
+      <label for="sv5" id="slide_vertical_5">
+        <app-experience-card
+          [position]="cards[4].position"
+          [company]="cards[4].company"
+          [description]="cards[4].description"
+          [yearsOfExperience]="cards[4].yearsOfExperience"
+          [icon]="cards[4].icon"
+          [experienceLink]="cards[4].experienceLink"
+          [backgroundColor]="'null'">
+        </app-experience-card>
+      </label>
+    </div>
+  </div>
+</section>

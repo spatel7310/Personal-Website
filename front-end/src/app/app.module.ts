@@ -10,6 +10,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { NgParticlesModule } from "ng-particles";
 import { ServiceCardComponent } from './components/portfolio/service-card/service-card.component';
+import { AboutComponent } from './components/about/about.component';
+import { ExperienceCardComponent } from './components/about/experience-card/experience-card.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { ServiceCardComponent } from './components/portfolio/service-card/servic
     HomeComponent,
     PortfolioComponent,
     ServiceCardComponent,
+    AboutComponent,
+    ExperienceCardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
-    NgParticlesModule
+    NgParticlesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

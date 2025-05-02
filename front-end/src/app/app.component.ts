@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { AboutComponent } from './components/about/about.component';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
@@ -45,7 +46,7 @@ export class AppComponent {
   id = "tsparticles";
   title = 'front-end';
   isMobile: boolean = false;
-  mobileSections = [HomeComponent, PortfolioComponent];
+  mobileSections = [HomeComponent, PortfolioComponent, AboutComponent];
 
   particleOptions = {
     background: {
