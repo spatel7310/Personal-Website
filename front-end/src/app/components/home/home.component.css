@@ -42,7 +42,7 @@
   --bgColor: black;
   --lines: 500;
   --lineHeight: 1.5rem;
-  --timePerLine: 0.5s;
+  --timePerLine: 0.2s;
   --widthCh: 22;
   /* do not touch the time property!!! */
   --time: calc(var(--lines) * var(--timePerLine));

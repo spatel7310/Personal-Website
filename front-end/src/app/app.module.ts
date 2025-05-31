@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,8 @@ import { NgParticlesModule } from "ng-particles";
 import { ServiceCardComponent } from './components/portfolio/service-card/service-card.component';
 import { AboutComponent } from './components/about/about.component';
 import { ExperienceCardComponent } from './components/about/experience-card/experience-card.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import { ExperienceCardComponent } from './components/about/experience-card/expe
     ServiceCardComponent,
     AboutComponent,
     ExperienceCardComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
     NgParticlesModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
