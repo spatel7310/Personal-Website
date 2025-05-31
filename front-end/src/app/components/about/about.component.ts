@@ -45,7 +45,7 @@ export class AboutComponent implements OnInit {
       company: 'Urban Science',
       description: 'Capstone project, lead developer for an internal tool for the company.',
       yearsOfExperience: '4 months',
-      icon: '../../../assets/img/us_logo.png',
+      icon: '../../../assets/img/US_logo.png',
       experienceLink: 'https://urbanscience.com/',
       isChecked: false // Add isChecked property
     },

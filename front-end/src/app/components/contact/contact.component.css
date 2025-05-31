@@ -1,0 +1,39 @@
+.dont-center-text {
+    text-align: left !important;
+}
+
+.c-r {
+    padding: 1rem 0 0 1rem;
+    margin: auto;
+    text-align: center;
+}
+
+.submit {
+    margin-bottom: 2rem;
+}
+
+.padded {
+    padding: 6rem 1rem;
+}
+
+@media (max-width: 1024px) {
+    .contact {
+        display: unset !important;
+    }
+
+    .padded {
+        padding: 9rem 1rem;
+    }
+    
+    .c-r {
+        padding: 4rem 0
+    }
+
+    .f {
+        padding: 0;
+    }
+
+    .submit {
+        margin-bottom: 0;
+    }
+}
