@@ -1,4 +1,5 @@
 import { Component, NgZone } from '@angular/core';
+import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AboutComponent } from './components/about/about.component';
@@ -46,7 +47,7 @@ export class AppComponent {
   id = "tsparticles";
   title = 'front-end';
   isMobile: boolean = false;
-  mobileSections = [HomeComponent, PortfolioComponent, AboutComponent];
+  mobileSections = [HomeComponent, AboutComponent, PortfolioComponent, ContactComponent];
 
   particleOptions = {
     background: {
@@ -177,7 +178,7 @@ export class AppComponent {
 
       setTimeout(() => {
         doBounce();
-      }, 1000); // Allow swiper to settle before starting
+      }, 8000); // Allow swiper to settle before starting
     }
   }
 
