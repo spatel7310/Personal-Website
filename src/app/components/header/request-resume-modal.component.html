@@ -1,0 +1,26 @@
+<div *ngIf="visible" class="modal-overlay">
+  <div class="modal-content rounded-lg bg-black text-white p-8 shadow-xl">
+    <h2 class="text-2xl font-bold mb-4">Request Resume</h2>
+    <form [formGroup]="form" (ngSubmit)="onConfirm()">
+      <div class="mb-4">
+        <label class="block mb-1">Company Name</label>
+        <input formControlName="company" type="text" class="w-full p-2 rounded bg-gray-800 border border-gray-600 text-white" />
+        <div *ngIf="form.get('company')?.touched && form.get('company')?.invalid" class="text-red-400 text-xs mt-1">Required</div>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1">Reason for Contact</label>
+        <input formControlName="reason" type="text" class="w-full p-2 rounded bg-gray-800 border border-gray-600 text-white" />
+        <div *ngIf="form.get('reason')?.touched && form.get('reason')?.invalid" class="text-red-400 text-xs mt-1">Required</div>
+      </div>
+      <div class="mb-6">
+        <label class="block mb-1">Email</label>
+        <input formControlName="email" type="email" class="w-full p-2 rounded bg-gray-800 border border-gray-600 text-white" />
+        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="text-red-400 text-xs mt-1">Valid email required</div>
+      </div>
+      <div class="flex justify-end space-x-4">
+        <button type="button" (click)="onCancel()" class="px-4 py-2 rounded border border-white text-white bg-transparent hover:bg-gray-700">Cancel</button>
+        <button type="submit" class="px-4 py-2 rounded border border-white text-white bg-blue-700 hover:bg-blue-800">Confirm</button>
+      </div>
+    </form>
+  </div>
+</div> 

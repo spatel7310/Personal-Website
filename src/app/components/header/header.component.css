@@ -9,3 +9,34 @@
     display: none;
   }
 }
+
+.modal-overlay {
+  z-index: 2000;
+}
+
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  min-width: 240px;
+  max-width: 90vw;
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px #000a;
+  text-align: center;
+  font-size: 1rem;
+  z-index: 3000;
+  opacity: 0.97;
+  transition: opacity 0.3s;
+}
+.snackbar-success {
+  background: #1a7f37;
+  color: #fff;
+}
+.snackbar-fail {
+  background: #b91c1c;
+  color: #fff;
+}

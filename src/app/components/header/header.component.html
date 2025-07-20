@@ -11,7 +11,7 @@
     <div id="navbar-menu" class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" [ngClass]="{ hidden: !navbarOpen, 'block rounded shadow-lg': navbarOpen }" id="example-navbar-warning">
       <ul id="navbar-left-menu" class="flex flex-col lg:flex-row list-none mr-auto">
         <li>
-          <button id="navbar-request-resume-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button">
+          <button id="navbar-request-resume-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button" (click)="openResumeModal()">
             <i class="fa fa-cloud-download"></i> Request Resume
           </button>
         </li>
@@ -62,3 +62,8 @@
     </div>
   </div>
 </nav>
+<app-request-resume-modal [visible]="showResumeModal" (confirm)="onResumeModalConfirm($event)" (cancel)="onResumeModalCancel()"></app-request-resume-modal>
+
+<div *ngIf="snackbarMessage" class="snackbar" [ngClass]="snackbarSuccess ? 'snackbar-success' : 'snackbar-fail'">
+  {{ snackbarMessage }}
+</div>

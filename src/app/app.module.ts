@@ -15,6 +15,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ExperienceCardComponent } from './components/about/experience-card/experience-card.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RequestResumeModalComponent } from './components/header/request-resume-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ExperienceCardComponent,
     ContactComponent,
+    RequestResumeModalComponent,
   ],
   imports: [
     BrowserModule,
