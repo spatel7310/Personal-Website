@@ -54,7 +54,6 @@
   overflow: hidden;
   position: relative;
   width: var(--width);
-  /* word-break: break-all; */
 }
 
 .typewriter::before {

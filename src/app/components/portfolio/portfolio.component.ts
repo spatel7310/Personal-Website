@@ -7,10 +7,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
   images: string[] = [
-    '../../../assets/img/code_builder.png',
-    '../../../assets/img/soldby.jpeg',
-    '../../../assets/img/notely.png',
-    '../../../assets/img/resume_site.jpeg'
+    'assets/img/code_builder.png',
+    'assets/img/soldby.jpeg',
+    'assets/img/notely.png',
+    'assets/img/resume_site.jpeg'
   ];
   currentImageIndex: number = 0;
   intervalId: any;
