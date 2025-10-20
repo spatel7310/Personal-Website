@@ -66,10 +66,10 @@
   align-self: center;
   width: 70%;
   /* Ensure it spans the full width */
+}
 
-  .app-experience-card {
-    background-color: #666;
-  }
+.card-grid .app-experience-card {
+  background-color: #666;
 }
 
 .card {

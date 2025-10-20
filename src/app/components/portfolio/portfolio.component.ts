@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio',
@@ -6,11 +6,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
+  isSmallScreen: boolean = false;
   images: string[] = [
-    '../../../assets/img/code_builder.png',
-    '../../../assets/img/soldby.jpeg',
-    '../../../assets/img/notely.png',
-    '../../../assets/img/resume_site.jpeg'
+    'assets/img/code_builder.png',
+    'assets/img/soldby.jpeg',
+    'assets/img/notely.png',
+    'assets/img/resume_site.jpeg'
   ];
   currentImageIndex: number = 0;
   intervalId: any;
@@ -18,7 +19,13 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   constructor() { }
 
   ngOnInit(): void {
+    this.checkScreenSize();
     this.startSlideshow();
+  }
+
+  @HostListener('window:resize', [])
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 1024;
   }
 
   startSlideshow(): void {
