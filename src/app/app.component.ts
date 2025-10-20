@@ -45,7 +45,7 @@ export class AppComponent {
   @ViewChild(SwiperComponent) swiper?: SwiperComponent;
 
   id = "tsparticles";
-  title = 'front-end';
+  title = 'sp-software';
   isMobile: boolean = false;
   mobileSections = [HomeComponent, AboutComponent, PortfolioComponent, ContactComponent];
 
