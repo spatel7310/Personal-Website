@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -22,7 +23,7 @@ export class ContactComponent implements OnInit {
     const { name, email, message } = this.form.value;
     this.responseMessage = null;
     this.errorMessages = [];
-    this.http.post<any>('http://localhost:8080/api/contact/send', { name, email, message })
+    this.http.post<any>(`${environment.apiUrl}/contact/send`, { name, email, message })
       .subscribe({
         next: (response) => {
           this.responseMessage = response.message || 'Message sent successfully!';
