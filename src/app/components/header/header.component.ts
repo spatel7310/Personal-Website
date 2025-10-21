@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,19 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   navbarOpen = false;
+  @Output() navigateToContact = new EventEmitter<string>();
 
   constructor() { }
 
   setNavbarOpen() {
     this.navbarOpen = !this.navbarOpen;
+  }
+
+  onRequestResume() {
+    this.navigateToContact.emit('resume');
+  }
+
+  onHireMe() {
+    this.navigateToContact.emit('hire');
   }
 }

@@ -11,14 +11,14 @@
     <div id="navbar-menu" class="lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none" [ngClass]="{ hidden: !navbarOpen, 'block rounded shadow-lg': navbarOpen }" id="example-navbar-warning">
       <ul id="navbar-left-menu" class="flex flex-col lg:flex-row list-none mr-auto">
         <li>
-          <button id="navbar-request-resume-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button">
+          <button id="navbar-request-resume-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button" (click)="onRequestResume()">
             <i class="fa fa-cloud-download"></i> Request Resume
           </button>
         </li>
       </ul>
       <ul id="navbar-right-menu" class="flex flex-col lg:flex-row list-none lg:ml-auto">
         <li class="flex items-center">
-          <button id="navbar-hire-me-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button">
+          <button id="navbar-hire-me-btn" class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded-lg shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150 hide-on-mobile" type="button" (click)="onHireMe()">
             <i class="fas fa-unlock-alt"></i> Hire Me!
           </button>
         </li>
@@ -47,13 +47,13 @@
           </a>
         </li>
         <li class="flex items-center">
-          <a id="navbar-github" class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold show-on-desktop" href="https://github.com/spatel7310" target="_blank">
+          <a id="navbar-github" class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold show-on-desktop cursor-pointer" (click)="onHireMe()">
             <i class="lg:text-blueGray-200 text-blueGray-400 fas fa-unlock-alt text-lg leading-lg"></i>
             <span class="lg:hidden inline-block ml-2">Hire Me</span>
           </a>
         </li>
         <li class="flex items-center">
-          <a id="navbar-reqres" class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold show-on-desktop" href="https://www.linkedin.com/in/sheev-patel-0343181a1/" target="_blank">
+          <a id="navbar-reqres" class="lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold show-on-desktop cursor-pointer" (click)="onRequestResume()">
             <i class="lg:text-blueGray-200 text-blueGray-400 fa fa-file-download text-lg leading-lg"></i>
             <span class="lg:hidden inline-block ml-2">Request Resume</span>
           </a>

@@ -8,6 +8,7 @@ import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from 
 import { loadFull } from "tsparticles";
 import { ViewChild } from '@angular/core';
 import { SwiperComponent } from 'swiper/angular';
+import { ContactMessageService } from './services/contact-message.service';
 
 // import Swiper core and required components
 import SwiperCore, {
@@ -125,7 +126,8 @@ export class AppComponent {
 
   constructor(
     private ngZone: NgZone,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private contactMessageService: ContactMessageService
   ) { }
 
   ngOnInit() {
@@ -178,7 +180,7 @@ export class AppComponent {
 
       setTimeout(() => {
         doBounce();
-      }, 8000); // Allow swiper to settle before starting
+      }, 1000); // Allow swiper to settle before starting
     }
   }
 
@@ -193,5 +195,22 @@ export class AppComponent {
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
+  }
+
+  onNavigateToContact(messageType: string): void {
+    this.contactMessageService.setMessageType(messageType);
+    
+    if (this.isMobile) {
+      // Navigate to contact section in mobile swiper (index 3)
+      this.swiper?.swiperRef?.slideTo(3);
+    } else {
+      // Scroll to contact section in desktop view
+      setTimeout(() => {
+        const contactElement = document.querySelector('app-contact');
+        if (contactElement) {
+          contactElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
   }
 }

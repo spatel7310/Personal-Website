@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (navigateToContact)="onNavigateToContact($event)"></app-header>
 <main class="main_container">
     <ng-particles [id]="id" [options]="particleOptions" [particlesInit]="particlesInit"
         (particlesLoaded)="particlesLoaded($event)"></ng-particles>
