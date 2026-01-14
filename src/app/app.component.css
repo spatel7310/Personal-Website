@@ -32,3 +32,8 @@ canvas.tsparticles-canvas-el {
     opacity: 0.5; /* Final opacity */
   }
 }
+
+/* Terminal Path Styling */
+.terminal-path {
+  font-family: 'Courier New', monospace;
+}

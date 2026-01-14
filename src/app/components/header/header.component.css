@@ -1,9 +1,11 @@
-@media (max-width: 1024px) {
-    .hide-on-mobile {
-      display: none;
-    }
+/* Hide desktop navigation buttons on mobile (matches Tailwind lg: breakpoint) */
+@media (max-width: 1023px) {
+  .hide-on-mobile {
+    display: none;
+  }
 }
 
+/* Show mobile icon alternatives only on mobile */
 @media (min-width: 1024px) {
   .show-on-desktop {
     display: none;

@@ -1,28 +1,200 @@
-<section [class.pt-32]="!isSmallScreen" class="relative flex content-center ">
-  <div class="container relative mx-auto">
-    <div class="parent-container items-center flex flex-wrap text-white">
-      <div class="leftside w-half lg:w-6/12 px-4 ml-auto mr-auto text-left lg:text-left">
-        <app-service-card [paragraphs]="[
-          'public Class Services',
-          ' &emsp;&emsp;public Services_I_Offer()',
-          ' &emsp;&emsp; &emsp;&emsp; Web Development',
-          ' &emsp;&emsp; &emsp;&emsp; Mobile App Development',
-          ' &emsp;&emsp; &emsp;&emsp; Software Development',
-          ' &emsp;&emsp; &emsp;&emsp; E-commerce Development',
-          ' &emsp;&emsp; &emsp;&emsp; Consulting and Support',
-          ' &emsp;&emsp; &emsp;&emsp; Online Coding Classes',
-          ' &emsp;&emsp; &emsp;&emsp; Automation Services'
-        ]"></app-service-card>
-      </div>
-      <div class="rightside w-half lg:w-6/12 ml-auto mr-auto ">
-        <div class="slidercontainer">
-          <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentImageIndex"
-            [style.backgroundImage]="'url(' + image + ')'" (click)="onSlideClick()">
+<section class="relative pt-16 pb-16 flex content-center">
+  <div class="container relative mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-white mb-4" style="font-family: ElectroBox;">
+        <span class="text-green-400">&lt;</span>Projects<span class="text-green-400">/&gt;</span>
+      </h2>
+      <p class="terminal-path text-gray-500 text-sm font-mono">
+        ls -la ./projects things_i_have_built
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <!-- Project Card: Code Builder -->
+      <div class="project-card" (click)="openProject('https://github.com/spatel7310/Urban-Science-Code-Builder')">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <span class="card-tag">Enterprise</span>
+          </div>
+          <h3 class="card-title">Code Builder</h3>
+          <p class="card-description">
+            A visual programming interface built for Urban Science that allows non-developers to create complex data transformations through drag-and-drop blocks. Features real-time code generation and execution.
+          </p>
+          <div class="card-tech">
+            <span>Angular</span>
+            <span>Python</span>
+            <span>AWS</span>
+          </div>
+          <div class="card-link">
+            View on GitHub →
           </div>
         </div>
-        <div class="blur-color F25BOLD center-when-mobile">
-          <img class="emulator-img ml-auto block" src="assets/img/phone_emulator.png"
-            style="background-color: rgb(43, 43, 43) !important; box-shadow: 0 0 20px 25px ;">
+      </div>
+
+      <!-- Project Card: SoldBy -->
+      <div class="project-card" (click)="openProject('https://soldbysulay.herokuapp.com/')">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <span class="card-tag">E-Commerce</span>
+          </div>
+          <h3 class="card-title">SoldBy</h3>
+          <p class="card-description">
+            Full-stack e-commerce platform built for a real estate agent. Features property listings, lead capture, CRM integration, and automated email campaigns for client engagement.
+          </p>
+          <div class="card-tech">
+            <span>Node.js</span>
+            <span>React</span>
+            <span>PostgreSQL</span>
+          </div>
+          <div class="card-link">
+            View Live Site →
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Dance Academy -->
+      <div class="project-card" (click)="openProject('https://soramdanceacademy.netlify.app/')">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span class="card-tag">Live Site</span>
+          </div>
+          <h3 class="card-title">Dance Academy</h3>
+          <p class="card-description">
+            A modern, responsive website for a professional dance academy. Features class schedules, instructor profiles, event galleries, and an integrated contact system for student inquiries.
+          </p>
+          <div class="card-tech">
+            <span>Vue.js</span>
+            <span>JavaScript</span>
+            <span>Netlify</span>
+          </div>
+          <div class="card-link">
+            View Live Site →
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: Notely -->
+      <div class="project-card" (click)="openProject('https://github.com/spatel7310/Notely')">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <span class="card-tag">Mobile App</span>
+          </div>
+          <h3 class="card-title">Notely</h3>
+          <p class="card-description">
+            An intelligent note-taking app with real-time sync, markdown support, and AI-powered organization. Built with a focus on speed and offline-first architecture.
+          </p>
+          <div class="card-tech">
+            <span>Flutter</span>
+            <span>Firebase</span>
+            <span>Dart</span>
+          </div>
+          <div class="card-link">
+            View on GitHub →
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card: This Website -->
+      <div class="project-card" (click)="openProject('https://github.com/spatel7310/Personal-Website')">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+            </div>
+            <span class="card-tag">Web</span>
+          </div>
+          <h3 class="card-title">This Website</h3>
+          <p class="card-description">
+            My personal portfolio built from scratch with Angular. Features particle animations, smooth scrolling, responsive design, and a custom contact form integrated with Twilio.
+          </p>
+          <div class="card-tech">
+            <span>Angular</span>
+            <span>TypeScript</span>
+            <span>Tailwind</span>
+          </div>
+          <div class="card-link">
+            View Source →
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn red"></span>
+            <span class="terminal-btn yellow"></span>
+            <span class="terminal-btn green"></span>
+          </div>
+          <span class="terminal-title">services.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="prompt">$</span>
+            <span class="command">cat services.txt</span>
+          </div>
+          <div class="terminal-output">
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>Web Development</span>
+            </div>
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>Mobile App Development</span>
+            </div>
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>Software Development</span>
+            </div>
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>E-commerce Solutions</span>
+            </div>
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>Consulting & Support</span>
+            </div>
+            <div class="service-item">
+              <span class="service-bullet">▸</span>
+              <span>Automation Services</span>
+            </div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">$</span>
+            <span class="cursor">_</span>
+          </div>
         </div>
       </div>
     </div>
