@@ -1,5 +1,38 @@
-@media (max-width: 454px) {
-  h1{
-    font-size: 4rem !important;
+/* Home component responsive styles */
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .parent-container {
+    flex-direction: column-reverse;
+  }
+
+  .leftside,
+  .rightside {
+    width: 100%;
+    text-align: center;
+  }
+
+  .rightside {
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.25rem !important;
   }
 }

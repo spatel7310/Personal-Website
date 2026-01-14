@@ -1,104 +1,57 @@
-<section class="relative pt-32 flex content-center justify-center min-h-screen-75">
-  <div class="relative w-full h-full flex flex-col justify-center text-white">
-    <div class="flex flex-col items-center rounded-lg p-4 w-2/5 text-container">
-      <div class="big-caret intro-text" style="background-color: black; box-shadow: 0 0 20px 25px black;">
-        i’m a full-stack engineer with 3 years at GM, a background in computer science, and a passion for building
-        clean, efficient, and business-minded software. I’ve worked with companies like TechSmith and built apps from
-        the ground up, and I know what it takes to ship solid, user-focused solutions
-      </div>
-      <br>
-      <div class="additional-text" style="background-color: black; box-shadow: 0 0 20px 25px black;">
-        when I’m not coding, I’m probably climbing, reading, or building houses (literally)
+<section class="relative pt-32 pb-16 flex content-center justify-center">
+  <div class="container relative mx-auto px-4">
+    <!-- About Me Text -->
+    <div class="text-container text-white mb-16">
+      <div class="about-intro mx-auto max-w-3xl text-center">
+        <div class="intro-text mb-6">
+          i'm a full-stack engineer with 3 years at GM, a background in computer science, and a passion for building
+          clean, efficient, and business-minded software. I've worked with companies like TechSmith and built apps from
+          the ground up, and I know what it takes to ship solid, user-focused solutions
+        </div>
+        <div class="additional-text">
+          when I'm not coding, I'm probably climbing, reading, or building houses (literally)
+        </div>
       </div>
     </div>
 
-    <!-- Card Grid for Larger Screens -->
-    <div class="card-grid pt-24" *ngIf="!isSmallScreen">
-      <app-experience-card
-        *ngFor="let card of cards"
-        [position]="card.position"
-        [company]="card.company"
-        [description]="card.description"
-        [yearsOfExperience]="card.yearsOfExperience"
-        [icon]="card.icon"
-        [experienceLink]="card.experienceLink"
-        [backgroundColor]="'#666'"
-        [isChecked]=true>
-      </app-experience-card>
+    <!-- Experience Section Header -->
+    <div class="text-center mt-8 mb-12">
+      <h2 class="text-3xl font-bold text-white mb-2" style="font-family: ElectroBox;">
+        <span class="text-green-400">~/</span>experience
+      </h2>
+      <div class="terminal-path text-gray-500 text-sm font-mono">
+        $ ls -la ./career --sort=time
+      </div>
     </div>
-    
-    <!-- 3D Vertical Carousel for Smaller Screens -->
-    <div id="slider_vertical" *ngIf="isSmallScreen">
-      <input type="radio" name="slider_vertical" id="sv1" checked (change)="onRadioChange(0)">
-      <input type="radio" name="slider_vertical" id="sv2" (change)="onRadioChange(1)">
-      <input type="radio" name="slider_vertical" id="sv3" (change)="onRadioChange(2)">
-      <input type="radio" name="slider_vertical" id="sv4" (change)="onRadioChange(3)">
-      <input type="radio" name="slider_vertical" id="sv5" (change)="onRadioChange(4)">
-    
-      <label for="sv1" id="slide_vertical_1">
-        <app-experience-card
-          [position]="cards[0].position"
-          [company]="cards[0].company"
-          [description]="cards[0].description"
-          [yearsOfExperience]="cards[0].yearsOfExperience"
-          [icon]="cards[0].icon"
-          [experienceLink]="cards[0].experienceLink"
-          [backgroundColor]="'null'"
-          [isChecked]="selectedCardIndex === 0">
-        </app-experience-card>
-      </label>
-    
-      <label for="sv2" id="slide_vertical_2">
-        <app-experience-card
-          [position]="cards[1].position"
-          [company]="cards[1].company"
-          [description]="cards[1].description"
-          [yearsOfExperience]="cards[1].yearsOfExperience"
-          [icon]="cards[1].icon"
-          [experienceLink]="cards[1].experienceLink"
-          [backgroundColor]="'null'"
-          [isChecked]="selectedCardIndex === 1">
-        </app-experience-card>
-      </label>
-    
-      <label for="sv3" id="slide_vertical_3">
-        <app-experience-card
-          [position]="cards[2].position"
-          [company]="cards[2].company"
-          [description]="cards[2].description"
-          [yearsOfExperience]="cards[2].yearsOfExperience"
-          [icon]="cards[2].icon"
-          [experienceLink]="cards[2].experienceLink"
-          [backgroundColor]="'null'"
-          [isChecked]="selectedCardIndex === 2">
-        </app-experience-card>
-      </label>
-    
-      <label for="sv4" id="slide_vertical_4">
-        <app-experience-card
-          [position]="cards[3].position"
-          [company]="cards[3].company"
-          [description]="cards[3].description"
-          [yearsOfExperience]="cards[3].yearsOfExperience"
-          [icon]="cards[3].icon"
-          [experienceLink]="cards[3].experienceLink"
-          [backgroundColor]="'null'"
-          [isChecked]="selectedCardIndex === 3">
-        </app-experience-card>
-      </label>
-    
-      <label for="sv5" id="slide_vertical_5">
-        <app-experience-card
-          [position]="cards[4].position"
-          [company]="cards[4].company"
-          [description]="cards[4].description"
-          [yearsOfExperience]="cards[4].yearsOfExperience"
-          [icon]="cards[4].icon"
-          [experienceLink]="cards[4].experienceLink"
-          [backgroundColor]="'null'"
-          [isChecked]="selectedCardIndex === 4">
-        </app-experience-card>
-      </label>
+
+    <!-- Timeline -->
+    <div class="experience-timeline">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item" *ngFor="let card of cards; let i = index"
+           [class.timeline-right]="i % 2 === 1">
+        <div class="timeline-node">
+          <div class="node-dot"></div>
+          <div class="node-pulse"></div>
+        </div>
+
+        <div class="timeline-content" (click)="card.experienceLink && openLink(card.experienceLink)">
+          <div class="content-header">
+            <div class="company-logo" *ngIf="card.icon">
+              <img [src]="card.icon" [alt]="card.company + ' Logo'" />
+            </div>
+            <div class="header-text">
+              <h3 class="position">{{ card.position }}</h3>
+              <h4 class="company">{{ card.company }}</h4>
+            </div>
+            <span class="duration">{{ card.yearsOfExperience }}</span>
+          </div>
+          <p class="description">{{ card.description }}</p>
+          <div class="content-link" *ngIf="card.experienceLink">
+            <span class="link-text">View Company →</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

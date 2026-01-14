@@ -10,9 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 import { NgParticlesModule } from "ng-particles";
-import { ServiceCardComponent } from './components/portfolio/service-card/service-card.component';
 import { AboutComponent } from './components/about/about.component';
-import { ExperienceCardComponent } from './components/about/experience-card/experience-card.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,9 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     HomeComponent,
     PortfolioComponent,
-    ServiceCardComponent,
     AboutComponent,
-    ExperienceCardComponent,
     ContactComponent,
   ],
   imports: [
